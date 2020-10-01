@@ -7,15 +7,15 @@ This can probably be quite easily adjusted but it works well for this purpose
 
 There are two scripts that are intended for manual execution:
 
-build-ha-machine.sh: This script should be run first and it will downloaded the neccessary
-packages into a machines directory, where later Home Assistance will be installed.
+*build-ha-machine.sh*: This script should be run first and it will download the neccessary
+packages into a machines directory, where later Home Assistant will be installed.
 This script assumes it is run on an OpenSUSE host but can probably be adjusted for other
 distributions. If zypper is installed on the host, it is probably fine to run it also on
 a host of another distribution. 
 
 Once this has completed, you should run:
 
-initialize-ha-machine.sh: This script continues from the previous step by setting the
+*initialize-ha-machine.sh*: This script continues from the previous step by setting the
 permissions etc to nspawn into the machine and within that context install Home Assistant.
 This script will execute the bootstrap-homeassistant.sh as root within the nspawn environment,
 which in turn will execute the install-homeassistant.sh script as the homeassistance user
