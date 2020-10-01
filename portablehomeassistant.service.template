@@ -1,0 +1,18 @@
+[Unit]
+Description=Home Assistant (portable service)
+After=network-online.target
+
+[Service]
+User=homeassistant
+Type=simple
+ExecStart=/srv/homeassistant/bin/hass -c /home/homeassistant/.homeassistant
+Restart=on-failure
+RestartSec=5s
+BindPaths=TO_REPLACE:/home/homeassistant/.homeassistant
+BindPaths=/etc/passwd
+BindPaths=/etc/group
+BindPaths=/etc/shadow
+BindPaths=/etc/pulse/cookie
+
+[Install]
+WantedBy=multi-user.target

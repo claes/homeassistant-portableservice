@@ -1,0 +1,6 @@
+[Exec]
+User=homeassistant
+
+[Files]
+Bind=/home/claes/projects/homeassistant:/host-mnt
+Bind=/home/claes/projects/homeassistant/configuration-.homeassistant:/home/homeassistant/.homeassistant
