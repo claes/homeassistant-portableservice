@@ -15,8 +15,16 @@
 # Once that is done, it uses the machine to install it as a systemd portable 
 # service
 
+# Create the configuration directory if it does not already exist
+# By creating a symlink to an existing directory, you can manage your
+# configuration separately
+
+if [ ! -e configuration-.homeassistant ]; then
+  mkdir configuration-.homeassistant 
+fi
 
 machine=homeassistant
+this_dir=$(readlink -f .)
 machine_dir=$(readlink -f machines)
 configdir=$(readlink -f configuration-.homeassistant)
 currentuser=$(whoami)
@@ -49,6 +57,8 @@ sudo chmod g+s $machine_dir/$machine/srv/homeassistant
 # Prepare mountable directories to be used when installing home assistant
 sudo mkdir -p $machine_dir/$machine/host-mnt 
 sudo mkdir -p $machine_dir/$machine/home/homeassistant/.homeassistant
+
+cat homeassistant.nspawn.template | sed  $(echo "s#TO_REPLACE#$this_dir#g") > homeassistant.nspawn 
 
 # Now install home assistant within the machine 
 sudo systemd-nspawn -D $machine_dir/$machine \
