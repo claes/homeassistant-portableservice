@@ -1,5 +1,7 @@
+# Home Assistant as a systemd portable service
+
 These scripts performs a series of tasks in order to install Home Assistant
-as a systemd portable service on a Linux system.
+as a [systemd portable service](https://systemd.io/PORTABLE_SERVICES) on a Linux system.
 It is developed on OpenSUSE and uses OpenSUSE within the systemd machine.
 This can probably be quite easily adjusted but it works well for this purpose
 
