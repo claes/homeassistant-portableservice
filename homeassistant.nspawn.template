@@ -1,0 +1,6 @@
+[Exec]
+User=homeassistant
+
+[Files]
+Bind=TO_REPLACE:/host-mnt
+Bind=TO_REPLACE/configuration-.homeassistant:/home/homeassistant/.homeassistant
