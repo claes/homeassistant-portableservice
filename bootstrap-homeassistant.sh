@@ -1,4 +1,5 @@
 #!/bin/bash -x
+# This script is not intended for manual execution.
 # This script is run as root inside the systemd portable service
 # container in order to prepare for installation of home assistant
 # It starts of the installation as homeassistant user

@@ -1,4 +1,5 @@
 #!/bin/sh
+# This script is not intended for manual execution
 # This script is run as the homeassistant user inside the container in order to install homeassistant
 cd /srv/homeassistant
 python3 -m venv .

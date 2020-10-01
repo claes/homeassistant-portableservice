@@ -13,8 +13,8 @@ Once this has completed, you should run:
 initialize-ha-machine.sh: This script continues from the previous step by setting the
 permissions etc to nspawn into the machine and within that context install Home Assistant.
 This script will execute the bootstrap-homeassistant.sh as root within the nspawn environment,
-which in turn will execute the install-homeassistance.sh script as the homeassistance user
-within the same nspawn environment.
+which in turn will execute the install-homeassistant.sh script as the homeassistance user
+within the same nspawn environment. This will actually install Home Assistant.
 Once the these scripts have finished, there is a Home Assistant installation within the 
 systemd machine. The initialyze-ha-machine.sh script the finished by installing a portable
 service .service-file on the host machine, and starts it.
