@@ -7,6 +7,9 @@ There are two scripts that are intended for manual execution:
 
 build-ha-machine.sh: This script should be run first and it will downloaded the neccessary
 packages into a machines directory, where later Home Assistance will be installed.
+This script assumes it is run on an OpenSUSE host but can probably be adjusted for other
+distributions. If zypper is installed on the host, it is probably fine to run it also on
+a host of another distribution. 
 
 Once this has completed, you should run:
 
@@ -19,6 +22,7 @@ Once the these scripts have finished, there is a Home Assistant installation wit
 systemd machine. The initialyze-ha-machine.sh script the finished by installing a portable
 service .service-file on the host machine, and starts it.
 
-You should then be able to access Home Assistant on port 8123 on the host machine:
+It can take some time for the portable service to start and be available, but once it is, 
+you should then be able to access Home Assistant on port 8123 on the host machine:
 http://<hostmachine>:8123
 
